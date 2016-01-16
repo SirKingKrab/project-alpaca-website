@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Team Alpaca </title>
+        <link rel="stylesheet" href="../css/main.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js"></script>        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+
+    <body ng-app="app">
+        <div ng-controller="controller"></div>
+        <div>
+            <div id = "heading">
+                <nav class="navbar navbar-fixed navbar-default" id = "navbar">
+                    <div class="container-fluid">
+                        <ul class = "nav navbar-nav">
+                            <li><div><a href="#/">Home</a></div></li>
+                            <li><div><a href="#/about">About the Game</a></div></li>
+                            <li><div><a href="#/Q&A">Q&A</a></div></li>
+                            <li><div><a href="#/downloads">Downloads</a></div></li>
+                            <li><div><a href="#/play">Play Now <span style="font-size:14px">Firefox Only</span></a></div></li>
+                        </ul>                        
+                    </div>
+                </nav>
+            </div>
+            <div id="social-media-bar">
+                <a href="https://www.tumblr.com"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-tumblr-512.png" style="width: 50px"></a>                                
+                <a href="https://www.facebook.com"><img src="http://icons.iconarchive.com/icons/danleech/simple/256/facebook-icon.png" style="width: 50px"></a>
+                <a href="https://www.twitter.com"><img src="http://i1278.photobucket.com/albums/y513/VirtueApparel2013/Web%20Icons/TransparentTwitterIcon_zps331dc2f0.jpg" style="width: 50px"></a>
+            </div>               
+        <img src="../images/TeamAlpacaLogo.png" style="width:300px">
+        </div>
+        
+        <div ng-view>view</div>
+        
+        <script>
+            var app=angular.module('app',['ngRoute']);
+            app.config(function($routeProvider){
+                  $routeProvider
+                      .when('/',{
+                            templateUrl: 'views/home-index.html'
+                      })
+                      .when('/about',{
+                            templateUrl: 'views/about-index.html'
+                      })
+                      .when('/Q&A',{
+                          templateUrl: 'views/Q&A-index.html'
+                      })
+                      .when('/downloads',{
+                          templateUrl: 'views/downloads-index.html'
+                      })
+                      .when('/play',{
+                          templateUrl: 'views/play-index.html'
+                      })                      
+                      ;
+            });
+            app.controller('controller',function($scope){
+            
+                /*      
+                Here you can handle controller for specific route as well.
+                */
+            });  
+        </script>
+    
+    
+    
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    <footer>
+
+    </footer>
+</html>
